@@ -1,36 +1,44 @@
 module lab2_vk (
-    input logic [3:0] s,
-    input logic reset,
-    output logic seg1En,
-    seg2En,
+    input logic [3:0] s1,
+    s2,
+    input logic resetHigh,
+    output logic segLEn,
+    segREn,
     output logic [6:0] seg
 );
 
   logic clk;
+
   HSOSC #(
       .CLKHF_DIV(2'b00)
-  ) hf_osc (
+  )  // ensures 48MHz clock
+      hf_osc (
       .CLKHFPU(1'b1),
       .CLKHFEN(1'b1),
       .CLKHF  (clk)
   );
 
-  logic [24:0] counter;
+  logic [31:0] counter;
+  logic lrSeg;
+  logic [3:0] inputSwitches;
+
+  assign inputSwitches = lrSeg ? s1 : s2;
 
 
   sevenSegmentDecoder segDecoder (
-      .inputHex(s),
+      .inputHex(inputSwitches),
       .segments(seg)
   );
 
-  assign seg2En = ~seg1En;
+  assign segLEn = lrSeg;
+  assign segREn = ~lrSeg;
 
   always_ff @(posedge clk) begin
-    if (reset) begin
-      seg1En <= 1;
-    end
-    if (counter > 'd10000000) begin
-      seg1En  <= ~seg1En;
+    if (!resetHigh) begin
+      counter <= 0;
+      lrSeg   <= 1;
+    end else if (counter > 'd100000) begin
+      lrSeg   <= ~lrSeg;
       counter <= 0;
     end else counter <= counter + 1;
   end
