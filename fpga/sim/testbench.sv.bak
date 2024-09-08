@@ -46,6 +46,7 @@ module testbench ();
     #1;
     if (oldLrSeg !== lrSeg) begin
       {s1, s2, segLEnExpected, segREnExpected, segExpected} = testVectors[testCounter];
+      $display("%b", testVectors[testCounter]);
     end
   end
 

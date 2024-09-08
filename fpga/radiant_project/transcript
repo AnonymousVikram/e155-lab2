@@ -1,0 +1,385 @@
+# Reading pref.tcl
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+project open {C:/Users/vikra/OneDrive - Harvey Mudd College/HMC/FA24/E155/lab2/fpga/sim/lab2sim}
+# Loading project lab2sim
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Load canceled
+# reading C:/lscc/radiant/2024.1/questasim/win64/../modelsim.ini
+# Loading project lab2sim
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.testbench -L iCE40UP -voptargs=+acc
+# vsim -gui work.testbench -L iCE40UP -voptargs="+acc" 
+# Start time: 03:29:28 on Sep 08,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'testbench' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/dut/hf_osc File: nofile
+# Loading work.sevenSegmentDecoder(fast)
+# Error loading design
+# End time: 03:29:30 on Sep 08,2024, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 9
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -L iCE40UP -voptargs=+acc work.testbench
+# vsim -gui -L iCE40UP -voptargs="+acc" work.testbench 
+# Start time: 03:30:49 on Sep 08,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+add wave -position end  sim:/testbench/clk
+add wave -position end  sim:/testbench/errors
+add wave -position end  sim:/testbench/lrSeg
+add wave -position end  sim:/testbench/oldLrSeg
+add wave -position end  sim:/testbench/resetHigh
+add wave -position end  sim:/testbench/s1
+add wave -position end  sim:/testbench/s2
+add wave -position end  sim:/testbench/seg
+add wave -position end  sim:/testbench/segExpected
+add wave -position end  sim:/testbench/segLEn
+add wave -position end  sim:/testbench/segLEnExpected
+add wave -position end  sim:/testbench/segREn
+add wave -position end  sim:/testbench/segREnExpected
+add wave -position end  sim:/testbench/testCounter
+add wave -position end  sim:/testbench/testVectors
+run 100000
+# reading test vectors
+# Error (test           0): inputs = xxxx, xxxx 
+# outputs = 1111111 segment. Expected: (xxxxxxx)
+# Error (test           1): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+run 10000000000000000000000000000000000000000000
+# Invalid time value: 10000000000000000000000000000000000000000000
+run -all
+# Error (test           2): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test           3): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test           4): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test           5): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test           6): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test           7): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test           8): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test           9): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          10): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          11): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          12): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          13): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          14): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          15): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          16): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          17): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          18): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          19): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          20): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          21): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          22): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          23): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          24): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          25): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          26): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          27): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          28): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          29): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          30): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+# Error (test          31): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (0010000)
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run 99999999999999
+# reading test vectors
+# Error (test           0): inputs = xxxx, xxxx 
+# outputs = 1111111 segment. Expected: (xxxxxxx)
+# Error (test           1): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test           2): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test           3): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test           4): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test           5): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test           6): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test           7): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test           8): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test           9): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test          10): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test          11): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Error (test          12): inputs = 0000, 0000 
+# outputs = 1000000 segment. Expected: (1000000)
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run 99999999999
+# reading test vectors
+# Error (test           0): inputs = xxxx, xxxx 
+# outputs = 1111111 segment. L: 1 R: 0 Expected: (xxxxxxx segment. L: x R: x)
+# Error (test           1): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           2): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           3): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           4): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           5): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           6): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           7): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           8): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           9): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test          10): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test          11): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run -all
+# reading test vectors
+# Error (test           0): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Error (test           1): inputs = 0000, 0001 
+# outputs = 1111001 segment. L: 0 R: 1 Expected: (1000000 segment. L: 1 R: 0)
+# Error (test           2): inputs = 0000, 0001 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1111001 segment. L: 0 R: 1)
+# Error (test           3): inputs = 0000, 0010 
+# outputs = 0100100 segment. L: 0 R: 1 Expected: (1000000 segment. L: 1 R: 0)
+# Error (test           4): inputs = 0000, 0010 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (0100100 segment. L: 0 R: 1)
+# Error (test           5): inputs = 0000, 0011 
+# outputs = 0110000 segment. L: 0 R: 1 Expected: (1000000 segment. L: 1 R: 0)
+# Error (test           6): inputs = 0000, 0011 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (0110000 segment. L: 0 R: 1)
+# Error (test           7): inputs = 0000, 0100 
+# outputs = 0011001 segment. L: 0 R: 1 Expected: (1000000 segment. L: 1 R: 0)
+# Error (test           8): inputs = 0000, 0100 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (0011001 segment. L: 0 R: 1)
+# Error (test           9): inputs = 0000, 0101 
+# outputs = 0010010 segment. L: 0 R: 1 Expected: (1000000 segment. L: 1 R: 0)
+# Error (test          10): inputs = 0000, 0101 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (0010010 segment. L: 0 R: 1)
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run 10000000
+# reading test vectors
+# 00000000101000000
+# 00000000011000000
+# Error (test           0): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run 10000000
+# reading test vectors
+# 00000000101000000
+# 00000000011000000
+# Error (test           0): inputs = 0000, 0000 
+# outputs = 1000000 segment. L: 1 R: 0 Expected: (1000000 segment. L: 0 R: 1)
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+compile
+# wrong # args: should be "compile w cmd ?arg ...?"
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run 10000000
+# reading test vectors
+# 00000000101000000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run -all
+# reading test vectors
+# 00000000101000000
+# 00000000011000000
+# 00000001101000000
+# 00000001011111001
+# 00000010101000000
+# 00000010010100100
+# 00000011101000000
+# 00000011010110000
+# 00000100101000000
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run -all
+# reading test vectors
+add wave -position end  sim:/testbench/testCounter
+# Compile of testbench.sv was successful.
+# Compile of lab2_vk.sv was successful.
+# Compile of sevenSegmentDecoder.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.lab2_vk(fast)
+# Loading iCE40UP.HSOSC(fast)
+# Loading work.sevenSegmentDecoder(fast)
+run -all
+# reading test vectors
+#         512 tests completed with           0 errors
+# ** Note: $finish    : C:/Users/vikra/OneDrive - Harvey Mudd College/HMC/FA24/E155/lab2/fpga/sim/testbench.sv(65)
+#    Time: 74537896 ps  Iteration: 0  Instance: /testbench
+# 1
+# Break in Module testbench at C:/Users/vikra/OneDrive - Harvey Mudd College/HMC/FA24/E155/lab2/fpga/sim/testbench.sv line 65
+# image file format "bmp" is unknown
+# Break key hit
+# End time: 03:57:21 on Sep 08,2024, Elapsed time: 0:26:32
+# Errors: 0, Warnings: 2
