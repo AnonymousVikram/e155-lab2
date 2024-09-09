@@ -1,10 +1,10 @@
-`timescale 1 ps / 1 ps
+`timescale 1 ns / 1 ns
 module testbench ();
   logic [3:0] s1, s2;
   logic resetHigh;
   logic segLEn, segREn;
   logic [6:0] seg;
-  lab2_vk #(5) dut (
+  lab2_vk #('d2) dut (
       .s1(s1),
       .s2(s2),
       .resetHigh(resetHigh),        

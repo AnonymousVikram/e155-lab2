@@ -4,13 +4,13 @@ module testbench ();
   logic resetHigh;
   logic segLEn, segREn;
   logic [6:0] seg;
-  lab2_vk dut (
-      s1,
-      s2,
-      resetHigh,
-      segLEn,
-      segREn,
-      seg
+  lab2_vk #('d2) dut (
+      .s1(s1),
+      .s2(s2),
+      .resetHigh(resetHigh),        
+      .segLEn(segLEn),
+      .segREn(segREn),
+      .seg(seg)
   );
 
   logic clk;
@@ -46,7 +46,6 @@ module testbench ();
     #1;
     if (oldLrSeg !== lrSeg) begin
       {s1, s2, segLEnExpected, segREnExpected, segExpected} = testVectors[testCounter];
-      $display("%b", testVectors[testCounter]);
     end
   end
 
@@ -63,7 +62,7 @@ module testbench ();
       testCounter = testCounter + 1;
       if (testVectors[testCounter] === 17'bx) begin
         $display("%d tests completed with %d errors", testCounter, errors);
-        $finish;
+        $end;
       end
     end
   end
