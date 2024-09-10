@@ -61,7 +61,7 @@ add wave -position end  sim:/testbench/clk
 add wave -position end  sim:/testbench/errors
 add wave -position end  sim:/testbench/lrSeg
 add wave -position end  sim:/testbench/oldLrSeg
-add wave -position end  sim:/testbench/resetHigh
+add wave -position end  sim:/testbench/nReset
 add wave -position end  sim:/testbench/s1
 add wave -position end  sim:/testbench/s2
 add wave -position end  sim:/testbench/seg

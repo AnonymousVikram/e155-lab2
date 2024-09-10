@@ -1,10 +1,13 @@
-module lab2_vk (
+module lab2_vk #(
+    parameter CLOCKWAIT = 'd100000
+) (
     input logic [3:0] s1,
     s2,
-    input logic resetHigh,
+    input logic nReset,
     output logic segLEn,
     segREn,
-    output logic [6:0] seg
+    output logic [6:0] seg,
+    output logic [4:0] sum
 );
 
   logic clk;
@@ -33,11 +36,13 @@ module lab2_vk (
   assign segLEn = lrSeg;
   assign segREn = ~lrSeg;
 
+  assign sum = s1 + s2;
+
   always_ff @(posedge clk) begin
-    if (!resetHigh) begin
+    if (!nReset) begin
       counter <= 0;
       lrSeg   <= 1;
-    end else if (counter > 'd100000) begin
+    end else if (counter > CLOCKWAIT) begin
       lrSeg   <= ~lrSeg;
       counter <= 0;
     end else counter <= counter + 1;

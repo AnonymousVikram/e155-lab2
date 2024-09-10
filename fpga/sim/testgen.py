@@ -42,8 +42,9 @@ def testgen():
     with open("testbench.tv", "w") as f:
         for i in hexInputs:
             for j in hexInputs:
-                f.write(f"{i}_{j}_1_0_{segOutputs[i]}\n")
-                f.write(f"{i}_{j}_0_1_{segOutputs[j]}\n")
+                binString = "{0:05b}".format(int(i, 2) + int(j, 2))
+                f.write(f"{i}_{j}_1_0_{segOutputs[i]}_{binString}\n")
+                f.write(f"{i}_{j}_0_1_{segOutputs[j]}_{binString}\n")
 
 
 if __name__ == "__main__":
