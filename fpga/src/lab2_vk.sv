@@ -1,16 +1,24 @@
+/*
+* File Author: Vikram Krishna (vkrishna@hmc.edu)
+* File Created: September 8, 2024
+* Summary: Top Module for Lab 2
+*/
+
 module lab2_vk #(
     parameter CLOCKWAIT = 'd100000
 ) (
     input logic [3:0] s1,
     s2,
-    input logic nReset,
-    output logic segLEn,
-    segREn,
+    input logic nreset,
+    output logic lSegEn,
+    rSegEn,
     output logic [6:0] seg,
     output logic [4:0] sum
 );
 
   logic clk;
+  logic [3:0] inputSwitches;
+  assign inputSwitches = lSegEn ? s1 : s2;
 
   HSOSC #(
       .CLKHF_DIV(2'b00)
@@ -21,31 +29,17 @@ module lab2_vk #(
       .CLKHF  (clk)
   );
 
-  logic [31:0] counter;
-  logic lrSeg;
-  logic [3:0] inputSwitches;
+  clockDivider #(CLOCKWAIT) clockDividerInst (
+      .clk(clk),
+      .nreset(nreset),
+      .lSegEn(lSegEn)
+  );
 
-  assign inputSwitches = lrSeg ? s1 : s2;
-
-
-  sevenSegmentDecoder segDecoder (
+  sevenSegmentDecoder segDecoderInst (
       .inputHex(inputSwitches),
       .segments(seg)
   );
 
-  assign segLEn = lrSeg;
-  assign segREn = ~lrSeg;
-
+  assign rSegEn = ~lSegEn;
   assign sum = s1 + s2;
-
-  always_ff @(posedge clk) begin
-    if (!nReset) begin
-      counter <= 0;
-      lrSeg   <= 1;
-    end else if (counter > CLOCKWAIT) begin
-      lrSeg   <= ~lrSeg;
-      counter <= 0;
-    end else counter <= counter + 1;
-  end
-
 endmodule
